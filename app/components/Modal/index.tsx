@@ -12,12 +12,12 @@ export default function Modal({ element, width = 'max-w-3xl' }: ModalProps) {
   let modal = Boolean(searchParams.get('createuser'));
   const pathname = usePathname();
 
-  function handleClick(e: React.MouseEvent<HTMLDivElement>) {
-    const target = e.target as HTMLElement;
-    if (target.classList.contains('overlay')) {
-      router.push(pathname);
-    }
-  }
+  // function handleClick(e: React.MouseEvent<HTMLDivElement>) {
+  //   const target = e.target as HTMLElement;
+  //   if (target.classList.contains('overlay')) {
+  //     router.push(pathname);
+  //   }
+  // }
 
   return (
     <>
@@ -27,7 +27,7 @@ export default function Modal({ element, width = 'max-w-3xl' }: ModalProps) {
           aria-labelledby="modal-title"
           role="dialog"
           aria-modal="true"
-          onClick={handleClick}
+          // onClick={handleClick}
         >
           <div className="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity"></div>
 

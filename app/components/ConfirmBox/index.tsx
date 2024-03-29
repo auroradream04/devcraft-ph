@@ -23,12 +23,20 @@ export default function ConfirmBox() {
             btnStyles="bg-secondary block flex-1  rounded-lg px-4 py-2 font-bold capitalize"
           />
 
-          <button
+          <CancelBtn
+            type="button"
+            title="confirm cancel"
+            elTag="linkTag"
+            path="/home"
+            btnStyles="bg-primary block flex-1  rounded-lg px-4 py-2 font-bold capitalize"
+          />
+
+          {/* <button
             type="button"
             className="bg-primary block w-64 flex-1 rounded-lg px-4 py-2 font-bold capitalize"
           >
             confirm cancel
-          </button>
+          </button> */}
         </div>
       </div>
     </div>
