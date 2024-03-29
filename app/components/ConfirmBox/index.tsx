@@ -1,3 +1,5 @@
+import { Button as CancelBtn } from '../Button';
+
 export default function ConfirmBox() {
   return (
     <div className="confirm-box mt-3 text-center">
@@ -13,12 +15,13 @@ export default function ConfirmBox() {
       </div>
       <div>
         <div className="gap-5 bg-gray-50 py-3 sm:flex">
-          <button
+          <CancelBtn
             type="button"
-            className="bg-secondary block w-64 flex-1 rounded-lg px-4 py-2 font-bold capitalize"
-          >
-            go back
-          </button>
+            title="go back"
+            elTag="linkTag"
+            path="?createuser=true"
+            btnStyles="bg-secondary block flex-1  rounded-lg px-4 py-2 font-bold capitalize"
+          />
 
           <button
             type="button"
