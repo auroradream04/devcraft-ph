@@ -1,19 +1,20 @@
 'use client';
 
 import { useSearchParams } from 'next/navigation';
-import { Button as CancelBtn } from '../Button';
+import { Button } from '../Button';
 import ConfirmBox from '../ConfirmBox';
 import Modal from '../Modal';
 
 export default function CreateUserForm() {
   const searchParams = useSearchParams();
-  let isConfirmBox = Boolean(searchParams.get('confirm'));
+  let isCancel = Boolean(searchParams.get('cancel'));
+  let isProceed = Boolean(searchParams.get('proceed'));
 
   return (
     <div className="mt-3 text-center sm:ml-4 sm:mt-0 sm:text-left">
-      <h3 className="text-transform: text-base font-semibold capitalize leading-6 text-gray-900">
+      <h1 className="text-transform: text-base font-semibold capitalize leading-6 text-gray-900">
         create user
-      </h3>
+      </h1>
       <hr className="my-2 h-px border-0 bg-gray-200 "></hr>
 
       <div>
@@ -81,24 +82,24 @@ export default function CreateUserForm() {
             </div>
           </div>
           <div className="justify-end gap-5 bg-gray-50 py-3 sm:flex">
-            <CancelBtn
+            <Button
               type="button"
               title="go back"
               elTag="linkTag"
-              path="?createuser=true&confirm=true"
+              path="?createuser=true&cancel=true"
               btnStyles="bg-secondary  block rounded-lg px-4 py-2 font-bold capitalize"
             />
 
-            {isConfirmBox && (
-              <Modal element={<ConfirmBox />} width="max-w-lg" />
-            )}
+            <Button
+              type="button"
+              title="save user"
+              elTag="linkTag"
+              path="?createuser=true&proceed=true"
+              btnStyles="bg-primary block rounded-lg px-4 py-2 font-bold capitalize"
+            />
 
-            <button
-              type="submit"
-              className="bg-primary block rounded-lg px-4 py-2 font-bold capitalize"
-            >
-              save user
-            </button>
+            {isCancel && <Modal element={<ConfirmBox />} width="max-w-lg" />}
+            {isProceed && <Modal element={<ConfirmBox />} width="max-w-lg" />}
           </div>
         </form>
       </div>

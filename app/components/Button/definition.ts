@@ -11,6 +11,6 @@ export type BtnProps = {
   btnStyles?: string;
   linkStyles?: string;
   elTag: 'linkTag' | 'btnTag';
-  path: string;
+  path?: string;
   type: 'button' | 'reset' | 'submit';
 };
